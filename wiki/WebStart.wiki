@@ -2,7 +2,7 @@
 
 = Introduction =
 
-SUN Java WebStart is a feature of Java that lets you launch a heavy application using a URL. 
+[http://www.sun.com/ SUN] [http://java.sun.com/ Java] [http://java.sun.com/products/javawebstart/index.jsp WebStart] is a feature of Java that lets you launch a heavy application using a URL. 
 
 = Details =
 
