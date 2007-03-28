@@ -20,4 +20,9 @@
         </propertyfile>
         <copy file="appinfo.properties" todir="${build.classes.dir}"/>
     </target>
+    
+    <target name="-post-jar">
+        <exec dir="${dist.dir}" executable="bulkjarsigner.csh" os="Linux">
+        </exec>
+    </target>
 </project>

@@ -7,9 +7,8 @@
 package net.kenware.langtrans;
 
 import java.io.IOException;
-import java.net.URLEncoder;
-import java.net.URLEncoder;
 import java.io.OutputStreamWriter;
+import java.net.URLEncoder;
 import java.util.Iterator;
 import java.util.List;
 
@@ -25,7 +24,6 @@ import org.apache.commons.httpclient.methods.GetMethod;
  * 3rd party Jericho libs
  */
 import au.id.jericho.lib.html.*;
-
 
 /**
  *
