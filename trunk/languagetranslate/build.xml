@@ -22,7 +22,6 @@
     </target>
     
     <target name="-post-jar">
-        <exec dir="${dist.dir}" executable="bulkjarsigner.csh" os="Linux">
-        </exec>
+        <exec dir="${dist.dir}" executable="bulkjarsigner.csh" os="Linux" />
     </target>
 </project>
