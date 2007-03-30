@@ -450,6 +450,7 @@ public class LangTrans extends javax.swing.JFrame {
     //  MAIN
     // =============================================================
     
+    // <editor-fold defaultstate="collapsed" desc="MAIN">
     /**
      * Main access point into program.
      * @param args the command line arguments
@@ -461,6 +462,7 @@ public class LangTrans extends javax.swing.JFrame {
             }
         });
     }
+    // </editor-fold>
     
     // =============================================================
     //  Private Members
