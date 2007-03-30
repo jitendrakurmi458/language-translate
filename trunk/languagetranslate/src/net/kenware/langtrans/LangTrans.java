@@ -20,7 +20,6 @@
 
 package net.kenware.langtrans;
 
-import java.awt.SystemTray;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
