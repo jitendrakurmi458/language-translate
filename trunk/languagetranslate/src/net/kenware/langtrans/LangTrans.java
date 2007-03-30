@@ -2,6 +2,20 @@
  * LangTrans.java
  *
  * Created on March 23, 2007, 9:58 PM
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
  */
 
 package net.kenware.langtrans;
@@ -17,8 +31,12 @@ import net.kenware.utils.AppInfo;
 import net.kenware.swing.AppInfoPanel;
 
 /**
+ * Main user interface for Language Translation.  This UI has two main
+ * panes.  The top has the source and the bottom has the translated 
+ * results.  The contents from the top and bottom can be flipped using 
+ * a flip button.
  *
- * @author  klanger
+ * @author uuklanger
  */
 public class LangTrans extends javax.swing.JFrame {
     
@@ -27,6 +45,9 @@ public class LangTrans extends javax.swing.JFrame {
     // =============================================================
     
     // <editor-fold defaultstate="collapsed" desc="Constants">
+    /**
+     * List of supported languages for things like the comboboxes.
+     */
     public static String[] LANGUAGE_ISO3166_LIST = new String[]{ "de", "en", "es", "fr", "ru" };
     // </editor-fold>
     
@@ -76,6 +97,10 @@ public class LangTrans extends javax.swing.JFrame {
         return;
     }
     
+    /**
+     * After all the standard init is complete, this is called
+     * to for anything not set during Matisse init.
+     */
     private void guiInit() {
         InputStream in = null;
         Properties langTransProps = new Properties();
@@ -296,11 +321,19 @@ public class LangTrans extends javax.swing.JFrame {
     // =============================================================
     
     // <editor-fold defaultstate="collapsed" desc="Event Handlers">
+    /**
+     * Quit button clicked
+     * @param evt ActionEvent
+     */
     private void jMenuItemQuitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemQuitActionPerformed
         this.dispose();
         return;
     }//GEN-LAST:event_jMenuItemQuitActionPerformed
     
+    /**
+     * About menu options clicked
+     * @param evt ActionEvent
+     */
     private void jMenuItemAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAboutActionPerformed
         AppInfoPanel aboutpanel = new AppInfoPanel();
         aboutpanel.loadAppInfoValues();
@@ -316,6 +349,10 @@ public class LangTrans extends javax.swing.JFrame {
         return;
     }//GEN-LAST:event_jMenuItemAboutActionPerformed
     
+    /**
+     * Flip button pressed.  This will flip source/target languages.
+     * @param evt ActionEvent
+     */
     private void jButtonFlipLanguagesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFlipLanguagesActionPerformed
         String source = this.jComboBoxSource.getSelectedItem().toString();
         String target = this.jComboBoxTarget.getSelectedItem().toString();
@@ -331,6 +368,10 @@ public class LangTrans extends javax.swing.JFrame {
         return;
     }//GEN-LAST:event_jButtonFlipLanguagesActionPerformed
     
+    /**
+     * When focus is gained, all text gets highlighted
+     * @param evt ActionEvent
+     */
     private void jTextAreaResultFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextAreaResultFocusGained
         JTextArea jta = (JTextArea) evt.getComponent();
         jta.selectAll();
@@ -338,6 +379,10 @@ public class LangTrans extends javax.swing.JFrame {
         return;
     }//GEN-LAST:event_jTextAreaResultFocusGained
     
+    /**
+     * When focus is gained, all text gets highlighted
+     * @param evt ActionEvent
+     */
     private void jTextAreaSourceFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextAreaSourceFocusGained
         JTextArea jta = (JTextArea) evt.getComponent();
         jta.selectAll();
@@ -345,6 +390,10 @@ public class LangTrans extends javax.swing.JFrame {
         return;
     }//GEN-LAST:event_jTextAreaSourceFocusGained
     
+    /**
+     * Translate button clicked.
+     * @param evt ActionEvent
+     */
     private void jButtonTranslateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTranslateActionPerformed
         GoogleTranslater gt = new GoogleTranslater();
         String sourcelang = this.jComboBoxSource.getSelectedItem().toString();
@@ -374,6 +423,11 @@ public class LangTrans extends javax.swing.JFrame {
         return;
     }//GEN-LAST:event_jButtonTranslateActionPerformed
     
+    /**
+     * If a key is pressed, code is fired to decide if translate button
+     * should be on.
+     * @param evt ActionEvent
+     */
     private void jTextAreaSourceKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextAreaSourceKeyTyped
         JTextArea jta = (JTextArea) evt.getSource();
         
@@ -397,6 +451,7 @@ public class LangTrans extends javax.swing.JFrame {
     // =============================================================
     
     /**
+     * Main access point into program.
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -407,24 +462,80 @@ public class LangTrans extends javax.swing.JFrame {
         });
     }
     
+    // =============================================================
+    //  Private Members
+    // =============================================================
+    
+    // <editor-fold defaultstate="collapsed" desc="Private Members">
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    /**
+     * Button for flipping source/target languages and text
+     */
     private javax.swing.JButton jButtonFlipLanguages;
+    /**
+     * Translate button
+     */
     private javax.swing.JButton jButtonTranslate;
+    /**
+     * Source languages
+     */
     private javax.swing.JComboBox jComboBoxSource;
+    /**
+     * Target languages
+     */
     private javax.swing.JComboBox jComboBoxTarget;
+    /**
+     * "Source" label
+     */
     private javax.swing.JLabel jLabelSource;
+    /**
+     * "Target" label
+     */
     private javax.swing.JLabel jLabelTarget;
+    /**
+     * Menu bar
+     */
     private javax.swing.JMenuBar jMenuBar;
+    /**
+     * File menu option
+     */
     private javax.swing.JMenu jMenuFile;
+    /**
+     * Help menu
+     */
     private javax.swing.JMenu jMenuHelp;
+    /**
+     * About menu item
+     */
     private javax.swing.JMenuItem jMenuItemAbout;
+    /**
+     * Quit menu item.
+     */
     private javax.swing.JMenuItem jMenuItemQuit;
+    /**
+     * Scroll pane for result
+     */
     private javax.swing.JScrollPane jScrollPaneResult;
+    /**
+     * Scroll pane for source
+     */
     private javax.swing.JScrollPane jScrollPaneSource;
+    /**
+     * top/bottom splitter
+     */
     private javax.swing.JSplitPane jSplitPane;
+    /**
+     * results text area
+     */
     private javax.swing.JTextArea jTextAreaResult;
+    /**
+     * text area source
+     */
     private javax.swing.JTextArea jTextAreaSource;
+    /**
+     * toolbar at bottom.
+     */
     private javax.swing.JToolBar jToolBar;
     // End of variables declaration//GEN-END:variables
-    
+    // </editor-fold>
 } // end-class
