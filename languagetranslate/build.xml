@@ -17,6 +17,7 @@
             <entry key="program.BUILDDATE" type="date" value="now" pattern="yyyyMMDDHHmmss" /> 
         </propertyfile>
         <copy file="appinfo.properties" todir="${build.classes.dir}"/>
+        <copy file="LICENSE.txt" todir="${build.classes.dir}"/>
     </target>
     
     <!-- Auto signing of Jar files -->
