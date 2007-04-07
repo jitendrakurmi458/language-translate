@@ -12,7 +12,7 @@ Pretty simple.  Just cut/paste the script below into a folder that is in your pa
 Since the jar signing is done external to the build.xml, it can be re-used and it makes you code more secure by having your passwords external to the project.
 
 = Script =
-
+{{{
 #!/bin/csh
 #
 #
@@ -45,3 +45,4 @@ outahere:
    echo "User Exit..."
 
 pissoff:
+}}}
