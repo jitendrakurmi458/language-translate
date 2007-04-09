@@ -46,3 +46,19 @@ outahere:
 
 pissoff:
 }}}
+
+= ANT Target =
+
+Usage with ANT is easy.  Just copy paste the following into your build.xmlL
+
+{{{
+<target name="-post-jar">
+   <exec dir="${dist.dir}" executable="bulkjarsigner.csh" os="Linux" />
+</target>
+}}}
+
+Granted this just targets linux but it can be adapted for other OS.  Also, _executable_ is assuming that _bulkjarsigner.csh_ is in your path.  If it is not, you will need a fully qualified path to the script.
+
+= Last Thoughts =
+
+This can be done directly in your build.xml using an ant target, however, this approach (for me) is a bit more flexible.  If anything, it is another approach to consider.
