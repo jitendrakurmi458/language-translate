@@ -26,8 +26,8 @@ import java.util.Properties;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-import net.kenware.utils.AppInfo;
-import net.kenware.swing.AppInfoPanel;
+import net.stoken.utils.AppInfo;
+import net.stoken.swing.AppInfoPanel;
 
 /**
  * Main user interface for Language Translation.  This UI has two main
