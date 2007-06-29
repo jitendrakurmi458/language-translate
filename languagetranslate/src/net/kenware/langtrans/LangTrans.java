@@ -25,14 +25,16 @@ import java.io.InputStream;
 import java.util.Properties;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 
 import net.stoken.utils.AppInfo;
 import net.stoken.swing.AppInfoPanel;
 
 /**
  * Main user interface for Language Translation.  This UI has two main
- * panes.  The top has the source and the bottom has the translated 
- * results.  The contents from the top and bottom can be flipped using 
+ * panes.  The top has the source and the bottom has the translated
+ * results.  The contents from the top and bottom can be flipped using
  * a flip button.
  *
  * @author uuklanger
@@ -61,6 +63,14 @@ public class LangTrans extends javax.swing.JFrame {
     public LangTrans() {
         InputStream in = null;
         Properties props = new Properties();
+        
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            SwingUtilities.updateComponentTreeUI(this);
+            
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        } // end-try-catch
         
         //
         // net netbeans do its magic
