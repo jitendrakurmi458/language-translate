@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0"
+	codebase="http://home.columbus.rr.com/klanger/webstart/languagetranslate_1-x/"
+	href="languagetranslate_1-1-x.jnlp">
+  <information>
+    <title>Language Translate</title>
+    <vendor>StoKen Software</vendor>
+    <homepage href="index.html" />
+    <description>Simple language translate using Google's Language Translate</description>
+    <icon href="langtrans.png" />
+    <offline-allowed />
+    <shortcut online="false">
+      <desktop/>
+      <menu submenu="StoKen Software"/>
+    </shortcut>
+  </information>
+  <resources>
+    <j2se version="1.4+" />
+    <jar href="languagetranslate.jar" />
+  </resources>
+  <resources locale="" os="">
+    <jar download="eager" href="lib/dom4j-1.6.1.jar" />
+    <jar download="eager" href="lib/jakarta-commons-codec.jar" />
+    <jar download="eager" href="lib/jakarta-commons-httpclient.jar" />
+    <jar download="eager" href="lib/jakarta-commons-logging.jar" />
+    <jar download="eager" href="lib/jaxen-1.1-beta-6.jar" />
+    <jar download="eager" href="lib/jericho-html-2.3.jar" />
+    <jar download="eager" href="lib/stokenutils.jar" />
+  </resources>
+  <application-desc main-class="net.kenware.langtrans.LangTrans" />
+  <security>
+     <all-permissions/>
+  </security>
+</jnlp>
